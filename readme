@@ -1,2 +1,7 @@
 pip install build
 python -m build
+
+pip install twine
+twine upload dist/app_common_utils-0.1.0.tar.gz app_common_utils-0.1.0-py3-none-any.whl
+
+python -m twine upload dist/*
