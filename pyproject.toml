@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "app-common-utils"
+version = "0.1.0"
+description = "Common utilities for FastAPI services"
+readme = "README.md"
+requires-python = ">=3.10"
+license =  "MIT"
+authors = [{ name = "Shahaji Nangare", email = "shahaji.nangare@magentamobility.com" }]
+
+dependencies = [
+  "fastapi>=0.115.0",
+  "sqlalchemy>=2.0",
+  "pydantic-settings>=2.0",
+]
+
+[project.urls]
+Homepage = "https://magentamobility.com/app-common-utils"
+Repository = "https://github.com/shahajinangare/app-common-utils"
