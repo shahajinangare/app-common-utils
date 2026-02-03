@@ -51,7 +51,7 @@ Thumbs.db
 __pycache__
 *.egg-info
 .venv
-.env
-.env.development
-tests/
+# .env
+# .env.development
+# tests/
 
