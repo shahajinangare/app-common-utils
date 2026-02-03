@@ -4,7 +4,7 @@ from typing import AsyncGenerator
 import os
 from dotenv import load_dotenv
 
-from app.core.config import get_settings
+from app_common_utils.core.config import get_settings
 
 # Load config FIRST
 settings = get_settings()
@@ -39,7 +39,7 @@ AsyncSessionLocal = async_sessionmaker(
 Base = declarative_base()
 
 # Import your models HERE 
-from app.models import user_model
+from app_common_utils.models import user_model
 
 # Create tables on startup (run once)
 async def init_db():

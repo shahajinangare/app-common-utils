@@ -1,6 +1,6 @@
 from enum import Enum
 from typing import Final
-from app.core.config import get_settings
+from app_common_utils.core.config import get_settings
 
 settings = get_settings()
 
@@ -13,4 +13,4 @@ class PHONEPE_API_URL(str, Enum):
 
 class SMS_API_URL(str, Enum):
     SERVICE_NAME ="sms-service"
-    SEND_SMS= f"{settings.api.base_url}/{SERVICE_NAME}/v1/sms/otp"
+    SEND_SMS= f"{settings.api.base_url}/{SERVICE_NAME}/v1/sms/otp"s

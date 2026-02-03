@@ -1,4 +1,4 @@
-from app.db.base import init_db, engine
+from  app_common_utils.db.base import init_db, engine
 
 class DatabaseLifespan:
     async def __aenter__(self):

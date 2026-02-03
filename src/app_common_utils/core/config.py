@@ -1,6 +1,6 @@
 # app/core/config.py
 from functools import lru_cache
-from pydantic import AnyUrl
+from pydantic import AnyUrl, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import Any
 from pathlib import Path
@@ -34,15 +34,17 @@ class SecuritySettings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="SEC_", env_file=str(get_env_file()), extra="ignore")
 
 class DatabaseSettings(BaseSettings):
-    mysql_user: str
+    mysql_user : str 
     mysql_pwd: str
     mysql_host: str
     mysql_port: str = 3306
+    mysql_database_name: str 
     mysql_database_name: str
     pool_size: int = 10
 
-    model_config = SettingsConfigDict(env_prefix="DB_",env_file=str(get_env_file()),   extra="ignore")
+    model_config = SettingsConfigDict(env_prefix="DB_",env_file=str(get_env_file()),   extra="ignore",)
 
+    
 class ThirdPartySettings(BaseSettings):
     sentry_dsn: str | None = None
     redis_url: str | None = None
@@ -81,11 +83,11 @@ class SmsSettings(BaseSettings):
 class Settings(BaseSettings):
     app: AppSettings = AppSettings()
     security: SecuritySettings = SecuritySettings()
-    db: DatabaseSettings = DatabaseSettings()
     third_party: ThirdPartySettings = ThirdPartySettings()
     api:ApiSettings=ApiSettings()
     email:EmailSettings=EmailSettings()
     sms:SmsSettings=SmsSettings()
+    db:DatabaseSettings=DatabaseSettings() 
 
 @lru_cache
 def get_settings()-> Settings:

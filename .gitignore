@@ -49,4 +49,5 @@ Thumbs.db
 *.wmv
 
 *.egg-info
+.venv
 
