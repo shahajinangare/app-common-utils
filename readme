@@ -12,7 +12,6 @@ twine upload dist/app_common_utils-0.1.0.tar.gz app_common_utils-0.1.0-py3-none-
 
 python -m twine upload dist/*
 
-
 python.exe -m pip install --upgrade pip
 
 #### INstall packge locally 
